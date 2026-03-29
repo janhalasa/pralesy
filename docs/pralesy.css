@@ -1,0 +1,6 @@
+.mobile-menu-support-us {
+    position: absolute;
+    bottom: 1rem;
+    padding: 1rem;
+    width: calc(100% - 3rem);
+}

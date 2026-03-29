@@ -44,7 +44,7 @@ tailwind.config = {
                 "surface-container-lowest": "#ffffff",
                 "primary-fixed": "#628924",
                 "background": "#E9EBE5",
-                "surface-container-low": "#fafbf8",
+                "almost-white": "#fafbf8",
                 "surface-container-low": "white",
                 "on-surface-variant": "#41493f",
                 "on-primary": "#ffffff",

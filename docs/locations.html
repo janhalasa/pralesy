@@ -16,6 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet"/>
   <script id="tailwind-config" src="tailwind-config.js"></script>
+  <link href="pralesy.css" rel="stylesheet"/>
   <style>
       .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -38,12 +39,10 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
   <div class="flex justify-between items-center w-full px-5 md:px-8 py-4 max-w-screen-2xl mx-auto">
-    <div class="block md:hidden">
-      <button id="open-menu" type="button" class="flex md:hidden">
-        <span class="material-symbols-outlined text-prales-700">menu</span>
-      </button>
+    <div class="flex md:hidden items-center gap-4">
+      <img alt="Pralesy.sk Logo" class="h-8 opacity-50" src="praleslogonove.png"/>
     </div>
-    <div class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">Pralesy.sk</div>
+    <div class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50 flex-1 md:flex-none ml-4">Pralesy.sk</div>
     <div class="hidden md:flex space-x-8 -mb-2">
       <a
         class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
@@ -61,11 +60,16 @@
         class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
         href="about.html">O nás</a>
     </div>
-    <div class="flex items-center gap-4">
+    <div class="hidden md:flex items-center gap-4">
 <!--      <span class="text-zinc-600 dark:text-zinc-400 font-sans uppercase tracking-widest text-xs cursor-pointer">EN</span>-->
-      <button
-        class="bg-gold-600 text-on-primary px-6 py-2 rounded-md hover:bg-gold-700 transition-all active:scale-95 font-sans uppercase tracking-widest text-xs font-bold">
-        Podporte nás
+      <button class="bg-gold-600 text-on-primary px-6 py-2 rounded-md hover:bg-gold-700 transition-all active:scale-95 font-sans uppercase tracking-widest text-xs font-bold">
+        <span class="">Podporte nás</span>
+      </button>
+      <span class="inline md:hidden text-gold-600 material-symbols-outlined">volunteer_activism</span>
+    </div>
+    <div class="block md:hidden">
+      <button id="open-menu" type="button" class="flex md:hidden">
+        <span class="material-symbols-outlined text-prales-700">menu</span>
       </button>
     </div>
   </div>
@@ -367,7 +371,7 @@
 
   <div id="menu-panel" class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-surface shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="p-6 h-full">
-      <div class="flex items-center justify-between mb-8 bg-white -m-6 p-6">
+      <div class="flex items-center justify-between mb-8 bg-almost-white -m-6 p-6">
         <h2 class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">Pralesy.sk</h2>
         <button id="close-menu" class="text-gray-500 hover:text-black">
           ✕
@@ -390,34 +394,13 @@
           class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-sm"
           href="about.html">O nás</a>
       </nav>
+      <a href="#" class="mobile-menu-support-us flex items-center justify-between text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-sm">
+        <span>Podporte nás</span>
+        <span class="text-gold-600 material-symbols-outlined">favorite</span>
+      </a>
     </div>
   </div>
 </div>
-<script>
-    const menu = document.getElementById('mobile-menu');
-    const panel = document.getElementById('menu-panel');
-    const backdrop = document.getElementById('menu-backdrop');
-    const openBtn = document.getElementById('open-menu');
-    const closeBtn = document.getElementById('close-menu');
-
-    function toggleMenu(isOpen) {
-        if (isOpen) {
-            menu.classList.remove('hidden');
-            // Timeout ensures the transition triggers after the element is visible
-            setTimeout(() => {
-                panel.classList.replace('-translate-x-full', 'translate-x-0');
-                backdrop.classList.replace('opacity-0', 'opacity-100');
-            }, 10);
-        } else {
-            panel.classList.replace('translate-x-0', '-translate-x-full');
-            backdrop.classList.replace('opacity-100', 'opacity-0');
-            setTimeout(() => menu.classList.add('hidden'), 300);
-        }
-    }
-
-    openBtn.addEventListener('click', () => toggleMenu(true));
-    closeBtn.addEventListener('click', () => toggleMenu(false));
-    backdrop.addEventListener('click', () => toggleMenu(false));
-</script>
+<script src="pralesy.js"></script>
 </body>
 </html>
