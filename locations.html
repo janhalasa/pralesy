@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Forest Directory | Pralesy.sk</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap"
+    rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"/>
+  <script id="tailwind-config" src="tailwind-config.js"></script>
+  <style>
+      .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      h1, h2, h3 {
+          font-family: 'Noto Serif', serif;
+      }
+
+      .label-text {
+          font-family: 'Work Sans', sans-serif;
+      }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+  <div class="flex justify-between items-center w-full px-5 md:px-8 py-4 max-w-screen-2xl mx-auto">
+    <div class="block md:hidden">
+      <button id="open-menu" type="button" class="flex md:hidden">
+        <span class="material-symbols-outlined text-prales-700">menu</span>
+      </button>
+    </div>
+    <div class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">Pralesy.sk</div>
+    <div class="hidden md:flex space-x-8 -mb-2">
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="news.html">Novinky</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="#">Naše ciele</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="#">Čo je prales</a>
+      <a
+        class="text-prales-700 dark:text-prales-400 font-bold border-b-2 border-prales-700 dark:border-prales-400 pb-1 font-sans uppercase tracking-widest text-xs"
+        href="#">Lokality</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="about.html">O nás</a>
+    </div>
+    <div class="flex items-center gap-4">
+<!--      <span class="text-zinc-600 dark:text-zinc-400 font-sans uppercase tracking-widest text-xs cursor-pointer">EN</span>-->
+      <button
+        class="bg-gold-600 text-on-primary px-6 py-2 rounded-md hover:bg-gold-700 transition-all active:scale-95 font-sans uppercase tracking-widest text-xs font-bold">
+        Podporte nás
+      </button>
+    </div>
+  </div>
+</nav>
+<main class="pt-12 md:pt-24 pb-20">
+  <!-- Hero Section -->
+  <section class="px-8 md:px-24 py-16 max-w-screen-2xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-12 md:items-end">
+      <div class="flex-1">
+        <span class="font-label uppercase tracking-widest text-xs text-primary mb-4 block">Zmapované</span>
+        <h1 class="text-5xl md:text-7xl font-headline text-prales-900 -tracking-tight leading-tight">Pralesné<br/>lokality
+        </h1>
+      </div>
+      <div class="flex-1 pb-2">
+        <p class="font-body text-zinc-700 leading-relaxed text-lg max-w-md">
+          Explore the silent sentinels of Slovakia. A comprehensive digital directory of primary forests, documenting
+          centuries of ecological continuity and undisturbed biodiversity.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Search & Filter Glass Section -->
+  <section class="max-w-screen-2xl mx-auto px-8 md:px-8 mb-12 top-20 z-40">
+    <div
+      class="bg-surface-container-low/80 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-outline-variant/20 flex flex-wrap gap-4 items-center">
+      <div class="flex-1 min-w-[300px] relative">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+        <input
+          class="w-full bg-white border-none rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-primary text-on-surface"
+          placeholder="Search by name or keyword..." type="text"/>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="relative group">
+          <select
+            class="appearance-none bg-white border-none rounded-lg pl-4 pr-10 py-3 focus:ring-2 focus:ring-primary text-on-surface cursor-pointer font-label text-sm uppercase tracking-wider">
+            <option>All Regions</option>
+            <option>Central Slovakia</option>
+            <option>Eastern Slovakia</option>
+            <option>Western Slovakia</option>
+          </select>
+        </div>
+        <div class="relative group">
+          <select
+            class="appearance-none bg-white border-none rounded-lg pl-4 pr-10 py-3 focus:ring-2 focus:ring-primary text-on-surface cursor-pointer font-label text-sm uppercase tracking-wider">
+            <option>Forest Type</option>
+            <option>Beech-Maple</option>
+            <option>Spruce-Fir</option>
+            <option>Riparian</option>
+          </select>
+        </div>
+      </div>
+      <button
+        class="bg-prales-600 text-white px-8 py-3 rounded-lg font-label uppercase tracking-widest text-xs flex items-center gap-2 hover:bg-prales-700 transition-colors">
+        <span class="material-symbols-outlined text-sm">tune</span>
+        Filter
+      </button>
+    </div>
+  </section>
+  <!-- Forest Grid -->
+  <section class="px-8 max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Forest Entry 1 -->
+    <article
+      class="group bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-prales-900/5">
+      <div class="overflow-hidden relative">
+        <img alt="Old growth forest"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square"
+             data-alt="Deep interior of Badínsky prales with ancient moss-covered beech trees and dramatic rays of morning light through mist"
+             src="images/prales-01.jpg"/>
+        <div
+          class="absolute top-4 left-4 bg-prales-950/40 backdrop-blur-md px-3 py-1 rounded text-white font-label uppercase text-[10px] tracking-widest">
+          UNESCO Site
+        </div>
+      </div>
+      <div class="p-8">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <span class="font-label uppercase text-[10px] tracking-widest text-primary mb-1 block">Malá Fatra</span>
+            <h3 class="text-2xl font-headline text-prales-900 leading-tight">Šútovská dolina</h3>
+          </div>
+          <span class="text-zinc-400 font-label text-xs">ID: 024-BP</span>
+        </div>
+        <p class="font-body text-zinc-600 text-sm leading-relaxed mb-6 line-clamp-3">
+          Na väčšine plochy lokality sa nachádza zachovalý smrekovo-bukovo-jedľový les s prímesou javora horského.
+          V sutinových častiach sa ojedinelo vyskytuje aj jaseň štíhly, lipa malolistá a brest horský.
+        </p>
+        <div class="flex items-center gap-4 border-t border-surface-container pt-6">
+          <div class="flex items-center gap-1.5" title="Rozloha">
+            <span class="material-symbols-outlined text-prales-700 text-lg">map</span>
+            <span class="font-label text-xs text-zinc-500">197,23 ha</span>
+          </div>
+          <div class="flex items-center gap-1.5" title="Dostupnosť pre verejnosť">
+            <span class="material-symbols-outlined text-prales-700 text-lg">hiking</span>
+            <span class="font-label text-xs uppercase text-zinc-500">Po celý rok</span>
+          </div>
+          <div class="ml-auto">
+            <button
+              class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-gold-600 hover:text-white transition-all">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Forest Entry 2 -->
+    <article
+      class="group bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-prales-900/5">
+      <div class="overflow-hidden relative">
+        <img alt="Ancient forest"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square"
+             data-alt="Towering silver firs and mountain maples in Dobročský prales, rich ground cover of ferns and decaying wood"
+             src="images/prales-02.jpg"/>
+      </div>
+      <div class="p-8">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <span class="font-label uppercase text-[10px] tracking-widest text-primary mb-1 block">Veporské vrchy</span>
+            <h3 class="text-2xl font-headline text-prales-900 leading-tight">Dobročský prales</h3>
+          </div>
+          <span class="text-zinc-400 font-label text-xs">ID: 102-DP</span>
+        </div>
+        <p class="font-body text-zinc-600 text-sm leading-relaxed mb-6 line-clamp-3">
+          Najznámejší slovenský prales leží cca 6 km južne od čiernobalockej osady Dobroč v centrálnej časti Veporských vrchov,
+          na  severozápadných svahoch kóty Geravka (1 005,1 m n. m.) v nadmorskej výške približne 730 až 1005 m.
+        </p>
+        <div class="flex items-center gap-4 border-t border-surface-container pt-6">
+          <div class="flex items-center gap-1.5" title="Rozloha">
+            <span class="material-symbols-outlined text-prales-700 text-lg">map</span>
+            <span class="font-label text-xs text-zinc-500">50,96 ha</span>
+          </div>
+          <div class="flex items-center gap-1.5" title="Dostupnosť pre verejnosť">
+            <span class="material-symbols-outlined text-prales-700 text-lg">hiking</span>
+            <span class="font-label text-xs uppercase text-zinc-500">S obmedzením</span>
+          </div>
+          <div class="ml-auto">
+            <button
+              class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-gold-600 hover:text-white transition-all">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Forest Entry 3 -->
+    <article
+      class="group bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-prales-900/5">
+      <div class="overflow-hidden relative">
+        <img alt="Stužica forest"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square"
+             data-alt="Primeval beech forest of Stužica in Poloniny National Park, dense canopy and rugged mountain terrain in morning fog"
+             src="images/prales-03.jpg"/>
+        <div
+          class="absolute top-4 left-4 bg-prales-950/40 backdrop-blur-md px-3 py-1 rounded text-white font-label uppercase text-[10px] tracking-widest">
+          UNESCO World Heritage
+        </div>
+      </div>
+      <div class="p-8">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <span
+              class="font-label uppercase text-[10px] tracking-widest text-primary mb-1 block">Poloniny</span>
+            <h3 class="text-2xl font-headline text-prales-900 leading-tight">Stužica</h3>
+          </div>
+          <span class="text-zinc-400 font-label text-xs">ID: 088-ST</span>
+        </div>
+        <p class="font-body text-zinc-600 text-sm leading-relaxed mb-6 line-clamp-3">
+          Stužica je so svojou výmerou 615 ha naším najväčším kompaktným pralesom. Nachádza sa v Bukovských vrchoch na
+          slovesnko-poľsko-ukrajinskom trojmedzí.
+        </p>
+        <div class="flex items-center gap-4 border-t border-surface-container pt-6">
+          <div class="flex items-center gap-1.5" title="Rozloha">
+            <span class="material-symbols-outlined text-prales-700 text-lg">map</span>
+            <span class="font-label text-xs text-zinc-500">614,84 ha</span>
+          </div>
+          <div class="flex items-center gap-1.5" title="Dostupnosť pre verejnosť">
+            <span class="material-symbols-outlined text-prales-700 text-lg">hiking</span>
+            <span class="font-label text-xs uppercase text-zinc-500">Po celý rok</span>
+          </div>
+          <div class="ml-auto">
+            <button
+              class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-gold-600 hover:text-white transition-all">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Forest Entry 4 (Large Asymmetric Layout) -->
+    <article
+      class="lg:col-span-2 group flex flex-col md:flex-row bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-prales-900/5">
+      <div class="md:w-1/2 aspect-[16/9] md:aspect-auto overflow-hidden">
+        <img alt="Havešová forest"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-square"
+             data-alt="Sun-drenched tall beech trees in Havešová with vibrant green leaves and straight trunks reaching for the sky"
+             src="images/prales-04.jpg"/>
+      </div>
+      <div class="md:w-1/2 p-10 flex flex-col justify-center">
+        <span
+          class="font-label uppercase text-[10px] tracking-widest text-primary mb-2 block">Eastern Carpathians</span>
+        <h3 class="text-4xl font-headline text-prales-900 mb-6 leading-tight">Havešová</h3>
+        <p class="font-body text-zinc-600 text-base leading-relaxed mb-8">
+          Distinguished by its record-breaking beech tree heights, some exceeding 50 meters. This forest represents the
+          absolute pinnacle of growth potential for Central European beech forests.
+        </p>
+        <div class="flex flex-wrap gap-6 mb-8">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-prales-700" data-icon="height">height</span>
+            <span class="font-label text-xs uppercase tracking-wider text-zinc-500">Record Height</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-prales-700" data-icon="visibility">visibility</span>
+            <span class="font-label text-xs uppercase tracking-wider text-zinc-500">Observation Site</span>
+          </div>
+          <div class="ml-auto">
+            <button
+              class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-gold-600 hover:text-white transition-all">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Small Archive Note/Card -->
+    <div class="bg-primary p-8 rounded-lg flex flex-col justify-center text-white">
+      <span class="material-symbols-outlined text-4xl mb-4" data-icon="inventory">inventory</span>
+      <h4 class="text-xl font-headline mb-4">Incomplete Records?</h4>
+      <p class="font-body text-prales-100/80 text-sm mb-6 leading-relaxed">
+        Our database currently covers 92% of documented old-growth sites. Help our research teams identify potential new
+        sites.
+      </p>
+      <a
+        class="font-label uppercase tracking-widest text-xs underline underline-offset-8 decoration-prales-500/50 hover:decoration-white transition-all"
+        href="#">Submit Findings</a>
+    </div>
+  </section>
+  <!-- Pagination -->
+  <div class="flex justify-center items-center gap-4 mt-20">
+    <button
+      class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center text-zinc-400 cursor-not-allowed">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    <span class="font-label text-xs uppercase tracking-widest text-prales-900 font-bold px-4">01 / 14</span>
+    <button
+      class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center text-prales-900 hover:bg-gold-600 hover:text-white transition-colors">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+  </div>
+</main>
+<!-- Footer -->
+<footer class="bg-prales-900 dark:bg-black text-prales-50 w-full rounded-t-none">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full max-w-screen-2xl mx-auto">
+    <div class="md:col-span-1">
+      <div class="text-xl font-serif font-bold text-prales-50 mb-6">Pralesy.sk</div>
+      <p class="font-sans text-prales-50/80 text-sm leading-relaxed">Dedicated to the preservation of Slovakia's most
+        precious natural heritage sites since 2009.</p>
+      <p class="mt-8 font-sans text-prales-50/80 text-[10px] uppercase tracking-widest">© 2026</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Quick Links</span>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Privacy Policy</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Annual Reports</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Volunteer</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Press Kit</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Support Us</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Connect</span>
+      <div class="flex space-x-4">
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">public</span>
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">share</span>
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">alternate_email</span>
+      </div>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Newsletter</span>
+      <p class="text-xs text-prales-50/60">Receive seasonal updates from the heart of the forest.</p>
+      <div class="flex">
+        <input
+          class="bg-white/10 border-none text-white text-xs px-4 py-2 w-full focus:ring-1 ring-prales-500 rounded-l"
+          placeholder="Email" type="email"/>
+        <button class="bg-prales-500 text-white px-4 py-2 text-xs font-bold rounded-r">Join</button>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="mobile-menu" class="relative z-50 hidden" role="dialog" aria-modal="true">
+
+  <div id="menu-backdrop" class="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity duration-300 opacity-0"></div>
+
+  <div id="menu-panel" class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-surface shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="p-6 h-full">
+      <div class="flex items-center justify-between mb-8 bg-white -m-6 p-6">
+        <h2 class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">Pralesy.sk</h2>
+        <button id="close-menu" class="text-gray-500 hover:text-black">
+          ✕
+        </button>
+      </div>
+      <nav class="gap-8 flex flex-col flex-grow-1">
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="news.html">Novinky</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="#">Naše ciele</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="#">Čo je prales</a>
+        <a
+          class="bg-white p-3 -m-3 text-prales-700 dark:text-prales-400 font-bold dark:border-prales-400 font-sans uppercase tracking-widest text-xs"
+          href="locations.html">Lokality</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="about.html">O nás</a>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+    const menu = document.getElementById('mobile-menu');
+    const panel = document.getElementById('menu-panel');
+    const backdrop = document.getElementById('menu-backdrop');
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    function toggleMenu(isOpen) {
+        if (isOpen) {
+            menu.classList.remove('hidden');
+            // Timeout ensures the transition triggers after the element is visible
+            setTimeout(() => {
+                panel.classList.replace('-translate-x-full', 'translate-x-0');
+                backdrop.classList.replace('opacity-0', 'opacity-100');
+            }, 10);
+        } else {
+            panel.classList.replace('translate-x-0', '-translate-x-full');
+            backdrop.classList.replace('opacity-100', 'opacity-0');
+            setTimeout(() => menu.classList.add('hidden'), 300);
+        }
+    }
+
+    openBtn.addEventListener('click', () => toggleMenu(true));
+    closeBtn.addEventListener('click', () => toggleMenu(false));
+    backdrop.addEventListener('click', () => toggleMenu(false));
+</script>
+</body>
+</html>

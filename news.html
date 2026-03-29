@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="sk">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"/>
+  <script id="tailwind-config" src="tailwind-config.js"></script>
+  <style>
+      .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      h1, h2, h3 {
+          font-family: 'Noto Serif', serif;
+      }
+
+      .label-text {
+          font-family: 'Work Sans', sans-serif;
+      }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+  <div class="flex justify-between items-center w-full px-5 md:px-8 py-4 max-w-screen-2xl mx-auto">
+    <div class="block md:hidden">
+      <button id="open-menu" type="button" class="flex">
+        <span class="material-symbols-outlined text-prales-700">menu</span>
+      </button>
+    </div>
+    <div class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">
+      Pralesy.sk
+    </div>
+    <div class="hidden md:flex gap-8 -mb-2">
+      <a
+        class="text-prales-700 dark:text-prales-400 font-bold border-b-2 border-prales-700 dark:border-prales-400 pb-1 font-sans uppercase tracking-widest text-xs"
+        href="news.html">Novinky</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="#">Naše ciele</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="#">Čo je prales</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="locations.html">Lokality</a>
+      <a
+        class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+        href="about.html">O nás</a>
+    </div>
+    <div class="flex items-center gap-4">
+<!--      <button class="font-sans uppercase tracking-widest text-xs px-2 py-1 text-prales-900 dark:text-prales-50">EN-->
+<!--      </button>-->
+      <button
+        class="bg-gold-600 text-on-primary px-6 py-2 rounded-md hover:bg-gold-700 transition-all active:scale-95 font-sans uppercase tracking-widest text-xs font-bold">
+        Podporte nás
+      </button>
+    </div>
+  </div>
+</nav>
+<main class="pt-12 md:pt-24 pb-20">
+  <!--<section class="px-8 md:px-24 py-16 max-w-screen-2xl mx-auto">-->
+  <section class="max-w-screen-2xl mx-auto pt-16 px-8 mb-20 py-8">
+    <div class="flex flex-col gap-4 mb-12">
+      <span class="label-text uppercase tracking-widest text-xs text-primary font-bold">Pralesné</span>
+      <h1 class="text-5xl md:text-7xl -tracking-tight text-prales-900">Novinky</h1>
+    </div>
+    <div
+      class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low shadow-sm transition-all duration-500 hover:shadow-xl">
+      <div class="flex flex-col lg:flex-row min-h-[600px]">
+        <div class="w-full lg:w-2/3 relative h-[400px] lg:h-auto overflow-hidden">
+          <img
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            data-alt="misty morning in ancient beech forest with sunlight filtering through thick canopy and mossy ground"
+            src="images/prales-09.jpg"/>
+        </div>
+        <div class="w-full lg:w-1/3 p-10 lg:p-16 flex flex-col justify-center bg-surface-container-low">
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="label-text uppercase tracking-widest text-[10px] bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold">Monitoring</span>
+            <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">October 24, 2024</span>
+          </div>
+          <h2 class="text-3xl md:text-4xl mb-6 text-prales-900 leading-tight">The Unseen Giant: New Primeval Forest
+            Patch Discovered in High Tatras</h2>
+          <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8 text-lg">
+            Our team has successfully documented a 40-hectare area of previously unmapped old-growth forest. These
+            silent sentinels have stood for centuries, unaffected by industrial logging.
+          </p>
+          <a class="group/link inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs"
+             href="#">
+            Read the full report
+            <span
+              class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_right_alt</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="max-w-screen-2xl mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between md:items-end mb-12 gap-4">
+      <h2 class="text-3xl text-prales-900">Recent Updates</h2>
+      <div class="flex gap-4">
+        <button
+          class="px-4 py-2 bg-surface-container-high rounded-full label-text text-xs uppercase tracking-widest text-prales-900 font-bold">
+          All
+        </button>
+        <button
+          class="px-4 py-2 hover:bg-surface-container-low rounded-full label-text text-xs uppercase tracking-widest text-zinc-500 transition-colors">
+          Events
+        </button>
+        <button
+          class="px-4 py-2 hover:bg-surface-container-low rounded-full label-text text-xs uppercase tracking-widest text-zinc-500 transition-colors">
+          Advocacy
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="scenic view of pine forest covered in heavy winter snow under a clear blue sky"
+               src="images/prales-08.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Advocacy</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Oct 18, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">
+          Legislative Victory for Carpathian Beech Forests</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">New protections have been passed that effectively
+          double the buffer zones surrounding UNESCO heritage sites, ensuring a safer future for our unique
+          ecosystems.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="close up of a delicate fern leaf uncurling in soft dappled forest light"
+               src="images/prales-12.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Research</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Oct 12, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">
+          Biodiversity Audit: 300+ Species Identified</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">Our summer research expedition in the Muránska
+          Planina has concluded with the documentation of several rare beetle and fungi species previously unknown to
+          the region.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="high mountains silhouette against a misty sunset sky with pine trees in foreground"
+               src="images/prales-10.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Events</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Oct 05, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">Annual
+          Forest Guard Volunteer Training</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">Join us this November for our hands-on training
+          session for new forest guards. Learn how to identify logging violations and document forest health.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="ethereal green light rays breaking through tall forest trees over a bed of lush green moss"
+               src="images/prales-14.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Monitoring</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Sep 28, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">Satellite
+          Tech: Now Tracking Illegal Felling</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">We've integrated high-resolution satellite imagery
+          into our monitoring workflow, allowing for near real-time detection of any changes in core forest zones.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="macro shot of detailed tree bark with patches of orange and grey lichen"
+               src="images/prales-11.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Advocacy</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Sep 20, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">Call to
+          Action: Save the Vihorlat Wilderness</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">A new proposed infrastructure project threatens the
+          integrity of the Vihorlat protected area. Sign our petition to demand a re-route.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+      <article class="flex flex-col group">
+        <div class="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               data-alt="mountain stream flowing over smooth grey rocks in a dark green forest setting"
+               src="images/prales-13.jpg"/>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="label-text uppercase tracking-widest text-[10px] text-primary font-bold">Research</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="label-text uppercase tracking-widest text-[10px] text-zinc-500">Sep 15, 2024</span>
+        </div>
+        <h3 class="text-2xl mb-4 text-prales-900 leading-snug group-hover:text-prales-700 transition-colors">Water
+          Cycles in Old-Growth Forests</h3>
+        <p class="text-zinc-600 leading-relaxed mb-6 line-clamp-3">Our latest study highlights how intact primeval
+          forests act as giant sponges, regulating regional water supplies even during severe drought periods.</p>
+        <a
+          class="mt-auto inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-primary w-fit transition-all pb-1"
+          href="#">
+          Read More
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </article>
+    </div>
+    <div class="mt-20 flex justify-center">
+      <button
+        class="px-8 py-4 border border-outline-variant text-primary font-bold uppercase tracking-widest text-xs hover:bg-surface-container-low transition-all rounded-md">
+        Load More Articles
+      </button>
+    </div>
+  </section>
+</main>
+<footer class="bg-prales-900 dark:bg-black text-prales-50 w-full rounded-t-none">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full max-w-screen-2xl mx-auto">
+    <div class="md:col-span-1">
+      <div class="text-xl font-serif font-bold text-prales-50 mb-6">Pralesy.sk</div>
+      <p class="font-sans text-prales-50/80 text-sm leading-relaxed">Dedicated to the preservation of Slovakia's most
+        precious natural heritage sites since 2009.</p>
+      <p class="mt-8 font-sans text-prales-50/80 text-[10px] uppercase tracking-widest">© 2026</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Quick Links</span>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Privacy Policy</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Annual Reports</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Volunteer</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Press Kit</a>
+      <a
+        class="font-sans text-prales-50/60 hover:text-prales-50 hover:translate-x-1 transition-transform duration-200 text-sm"
+        href="#">Support Us</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Connect</span>
+      <div class="flex space-x-4">
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">public</span>
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">share</span>
+        <span class="material-symbols-outlined text-prales-100 cursor-pointer hover:scale-110 transition-transform">alternate_email</span>
+      </div>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-sans uppercase tracking-widest text-[10px] text-prales-100/60">Newsletter</span>
+      <p class="text-xs text-prales-50/60">Receive seasonal updates from the heart of the forest.</p>
+      <div class="flex">
+        <input
+          class="bg-white/10 border-none text-white text-xs px-4 py-2 w-full focus:ring-1 ring-prales-500 rounded-l"
+          placeholder="Email" type="email"/>
+        <button class="bg-prales-500 text-white px-4 py-2 text-xs font-bold rounded-r">Join</button>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="mobile-menu" class="relative z-50 hidden" role="dialog" aria-modal="true">
+
+  <div id="menu-backdrop" class="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity duration-300 opacity-0"></div>
+
+  <div id="menu-panel" class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-surface shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="p-6 h-full">
+      <div class="flex items-center justify-between mb-8 bg-white -m-6 p-6">
+        <h2 class="text-2xl font-serif font-bold text-prales-900 dark:text-prales-50">Pralesy.sk</h2>
+        <button id="close-menu" class="text-gray-500 hover:text-black">
+          ✕
+        </button>
+      </div>
+      <nav class="gap-8 flex flex-col flex-grow-1">
+        <a
+          class="bg-white p-3 -m-3 text-prales-700 dark:text-prales-400 font-bold dark:border-prales-400 font-sans uppercase tracking-widest text-xs"
+          href="news.html">Novinky</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="#">Naše ciele</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="#">Čo je prales</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="locations.html">Lokality</a>
+        <a
+          class="text-zinc-600 dark:text-zinc-400 hover:text-prales-800 dark:hover:text-prales-200 transition-colors font-sans uppercase tracking-widest text-xs"
+          href="about.html">O nás</a>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+    const menu = document.getElementById('mobile-menu');
+    const panel = document.getElementById('menu-panel');
+    const backdrop = document.getElementById('menu-backdrop');
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    function toggleMenu(isOpen) {
+        if (isOpen) {
+            menu.classList.remove('hidden');
+            // Timeout ensures the transition triggers after the element is visible
+            setTimeout(() => {
+                panel.classList.replace('-translate-x-full', 'translate-x-0');
+                backdrop.classList.replace('opacity-0', 'opacity-100');
+            }, 10);
+        } else {
+            panel.classList.replace('translate-x-0', '-translate-x-full');
+            backdrop.classList.replace('opacity-100', 'opacity-0');
+            setTimeout(() => menu.classList.add('hidden'), 300);
+        }
+    }
+
+    openBtn.addEventListener('click', () => toggleMenu(true));
+    closeBtn.addEventListener('click', () => toggleMenu(false));
+    backdrop.addEventListener('click', () => toggleMenu(false));
+</script>
+</body>
+</html>
